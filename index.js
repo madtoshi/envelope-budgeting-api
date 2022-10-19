@@ -30,6 +30,10 @@ const envelopes = [
 
 const nextEnvelopeId = 3
 
+app.get('/envelopes', (req, res, next) => {
+    res.send(envelopes);
+});
+
 app.post('/envelopes', (req, res, next) => {
     const newEnvelope = req.body;
     if (!newEnvelope.name || !newEnvelope.monthlyAllocation) {
