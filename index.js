@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
 app.get('/', (req, res, next) => {
     res.send('<h1>Hello, World.</h1>');
